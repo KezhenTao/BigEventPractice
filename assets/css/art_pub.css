@@ -11,3 +11,27 @@ body{
     display: flex;
     justify-content: space-between;
 } */
+
+.cropper-box{
+    width: 400px;
+    height: 280px;
+}
+
+.cropper-box img{
+    width: 100%;
+}
+
+.img-preview{
+    width: 200px;
+    height: 140px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.cropper{
+    display: flex;
+}
+
+.options{
+    margin-left: 40px;
+}

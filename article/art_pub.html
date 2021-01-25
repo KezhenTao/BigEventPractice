@@ -15,11 +15,66 @@
     <div class="layui-card">
         <div class="layui-card-header">卡片面板</div>
         <div class="layui-card-body">
-            卡片式面板面板通常用于非白色背景色的主体内<br>
-            从而映衬出边框投影
+            <form class="layui-form">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">文章标题</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="title" required lay-verify="required" placeholder="请输入标题"
+                            autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">文章类别</label>
+                    <div class="layui-input-block">
+                        <select name="cate_id">
+
+                        </select>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">文章内容</label>
+                    <div class="layui-input-block">
+                        <textarea name="content" id="" cols="30" rows="10"></textarea>
+                    </div>
+                </div>
+
+                <div class="layui-form-item ">
+                    <label class="layui-form-label">文章封面</label>
+                    <div class="layui-input-block cropper">
+                        <div class="cropper-box">
+                            <img src="../assets/images/sample.jpg" alt="" id="img">
+                        </div>
+                        <div class="options">
+                            <div class="img-preview"></div>
+                            <input type="file" id="file" style="display: none;" accept="image/png,image/jpeg"><br>
+                            <button type="button" class="layui-btn layui-btn-danger btnChooseFile">选择文件</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item ">
+                    <div class="layui-input-block cropper">
+                        <button class="layui-btn btnPub" lay-submit>立即发布</button>
+                        <button class="layui-btn layui-btn-primary btnDraft" lay-submit>存为草稿</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
+
+    <script type='text/html' id="tpl-cates">
+        <option value="">请选择文章类别</option>
+        {{each data}}
+        <option value="{{$value.Id}}">{{$value.name}}</option>
+        {{/each}}
+    </script>
     <script src="../assets/lib/jquery.js"></script>
+    <script src="../assets/lib/cropper/Cropper.js"></script>
+    <script src="../assets/lib/cropper/jquery-cropper.js"></script>
+
+    <script src="../assets/lib/tinymce/tinymce.min.js"></script>
+    <script src="../assets/lib/tinymce/tinymce_setup.js"></script>
     <script src="../assets/lib/layui/layui.all.js"></script>
     <script src="../assets/lib/template-web.js"></script>
     <script src="../assets/js/baseUrl.js"></script>
